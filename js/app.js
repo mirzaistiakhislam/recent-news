@@ -10,11 +10,16 @@ const displayNewsCategories = (categories) => {
     // console.log(data);
     const newsCategories = document.getElementById('news-categories');
     categories.forEach(category => {
-        const categoryLi = document.createElement('li');
-        // categoryLi.classList.add('anchor');
+        const categoryLi = document.createElement('div');
+
+
+        categoryLi.classList.add('sm:w-24', 'bg-slate-700', 'rounded-lg');
         categoryLi.innerHTML = `
 
-        <a onclick = "newsDetails('${category.category_id}');">${category.category_name}</a>
+       
+
+       <a class="text-sm md:text-sm cursor-pointer" onclick = "newsDetails('${category.category_id}');">${category.category_name}</a>
+        
         `
         newsCategories.appendChild(categoryLi);
 
@@ -64,11 +69,11 @@ const displayNewsDetails = (details) => {
         const detailDiv = document.createElement('div');
         // detailDiv.classList.add('card', 'card-side', 'bg-base-100', 'shadow-xl');
         detailDiv.innerHTML = `       
-        <div class="card lg:card-side bg-base-100 shadow-xl my-4">    
+        <div class="card lg:card-side bg-base-100 shadow-xl my-4 ">    
             <figure><img src="${detail.thumbnail_url}" alt="Movie"></figure>
             <div class="card-body">
                 <h2 class="card-title">${detail.title}</h2>
-                <p>${detail.details.slice(0, 400)}...</p>
+                <p>${detail.details.slice(0, 200)}...</p>
                 
                 <div class="flex justify-between">
                     <div class="flex items-center">
