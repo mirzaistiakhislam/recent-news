@@ -51,6 +51,12 @@ const displayNewsDetails = (details) => {
 
     }
 
+    const dataSort = details.sort((first, second) => {
+        return first.total_view - second.total_view;
+    });
+
+    const reverseDataSort = dataSort.reverse();
+
 
     details.forEach(detail => {
 
@@ -58,7 +64,7 @@ const displayNewsDetails = (details) => {
         const detailDiv = document.createElement('div');
         // detailDiv.classList.add('card', 'card-side', 'bg-base-100', 'shadow-xl');
         detailDiv.innerHTML = `       
-        <div class="card lg:card-side bg-base-100 shadow-xl">    
+        <div class="card lg:card-side bg-base-100 shadow-xl my-4">    
             <figure><img src="${detail.thumbnail_url}" alt="Movie"></figure>
             <div class="card-body">
                 <h2 class="card-title">${detail.title}</h2>
@@ -76,12 +82,9 @@ const displayNewsDetails = (details) => {
                     </div>
 
                     <div class="flex items-center">
-                    <label onclick="loadDetails('${detail._id}')" for="my-modal-6" class="btn modal-button"><i class="fa-solid fa-arrow-right text-4xl"></i></label> 
-                                        
+                        <label onclick="loadDetails('${detail._id}')" for="my-modal-6" class="btn modal-button"><i class="fa-solid fa-arrow-right text-4xl"></i></label>                                        
                     </div>
-                </div>
-                
-                
+                </div>                              
             </div>
         </div>
         `
