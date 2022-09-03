@@ -47,28 +47,56 @@ const displayNewsDetails = (details) => {
                 <div class="flex justify-between">
                     <div class="flex items-center">
                         <img class="w-12 rounded-full" src="${detail.author.img}"/>
-                        <span class="px-2">${detail.author.name}</span>
+                        <span class="px-2">${detail.author.name ? detail.author.name : 'Not Found'}</span>
                     </div>
 
                     <div class="flex items-center">
                         <i class="fa-regular fa-eye"></i>
-                        <span class="px-2">${detail.total_view}M</span>
+                        <span class="px-2">${detail.total_view ? detail.total_view : 'Not Found'}</span>
                     </div>
 
                     <div class="flex items-center">
-                    <i class="fa-solid fa-arrow-right text-4xl"></i>
+                    <label onclick="loadDetails('${detail._id}')" for="my-modal-6" class="btn modal-button"><i class="fa-solid fa-arrow-right text-4xl"></i></label> 
+                                        
                     </div>
                 </div>
                 
                 
-                
-
             </div>
         </div>
         `
         newsDetails.appendChild(detailDiv);
     })
 
+}
+
+const loadDetails = async id => {
+    // console.log(id);
+    const url = `https://openapi.programming-hero.com/api/news/${id}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    displayLoadDetails(data.data);
+}
+
+const displayLoadDetails = data => {
+    // console.log(data[0].details);
+    const fullNews = document.getElementById('full-news');
+    fullNews.innerText = data[0].details;
+    const authorDetails = document.getElementById('author-details');
+    authorDetails.innerHTML = `
+            <div class="flex justify-between">
+                <div class="flex items-center">
+                    <img class="w-12 rounded-full" src="${data[0].author.img}"/>
+                    <span class="px-2">${data[0].author.name ? data[0].author.name : 'Not Found'}</span>
+                </div>
+
+                <div class="flex items-center">
+                    <i class="fa-regular fa-eye"></i>
+                    <span class="px-2">${data[0].total_view ? data[0].total_view : 'Not Found'}</span>
+                </div>
+
+        </div>
+    `
 }
 
 loadNewsCategories();
