@@ -12,15 +12,16 @@ const displayNewsCategories = (categories) => {
         const categoryLi = document.createElement('li');
         // categoryLi.classList.add('anchor');
         categoryLi.innerHTML = `
-        <a onclick = "newsDetails('${category.category_id}')">${category.category_name}</a>
+
+        <a onclick = "newsDetails('${category.category_id}');">${category.category_name}</a>
         `
         newsCategories.appendChild(categoryLi);
-    })
 
+    })
 }
 
-const newsDetails = async id => {
-    // console.log(newsDetails);
+const newsDetails = async (id) => {
+    spinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
     const response = await fetch(url);
     const data = await response.json();
@@ -66,8 +67,10 @@ const displayNewsDetails = (details) => {
         </div>
         `
         newsDetails.appendChild(detailDiv);
-    })
 
+
+    })
+    spinner(false);
 }
 
 const loadDetails = async id => {
@@ -97,6 +100,16 @@ const displayLoadDetails = data => {
 
         </div>
     `
+}
+
+const spinner = isLoader => {
+    const loaderSection = document.getElementById('loader');
+    if (isLoader) {
+        loaderSection.classList.remove('hidden');
+    }
+    else {
+        loaderSection.classList.add('hidden');
+    }
 }
 
 loadNewsCategories();
