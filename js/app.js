@@ -6,6 +6,7 @@ const loadNewsCategories = async () => {
 }
 
 const displayNewsCategories = (categories) => {
+
     // console.log(data);
     const newsCategories = document.getElementById('news-categories');
     categories.forEach(category => {
@@ -29,9 +30,27 @@ const newsDetails = async (id) => {
 }
 
 const displayNewsDetails = (details) => {
+
     console.log(details);
     const newsDetails = document.getElementById('news-details');
     newsDetails.innerHTML = ``;
+
+    const notFound = document.getElementById('not-found');
+    if (details.length === 0) {
+        notFound.classList.remove('hidden');
+        notFound.innerHTML = `
+            <h1>Empty Category</h1>
+        `
+    }
+    else {
+        // notFound.classList.add('hidden');
+        notFound.classList.remove('hidden');
+        notFound.innerHTML = `
+            <h1>${details.length} items found for this category</h1>
+        `
+
+    }
+
 
     details.forEach(detail => {
 
