@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+</head>
+
+<body class="bg-gray-800">
+
+
+    <div id="accordion-color" data-accordion="collapse"
+        data-active-classes="bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white">
+        <h2 id="accordion-color-heading-1">
+            <button type="button"
+                class="flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 border-gray-200 rounded-t-xl focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 hover:bg-blue-100 dark:hover:bg-gray-800 bg-blue-100 dark:bg-gray-800 text-blue-600 dark:text-white"
+                data-accordion-target="#accordion-color-body-1" aria-expanded="true"
+                aria-controls="accordion-color-body-1">
+                <span>Difference between Var, Let and Const?</span>
+                <svg data-accordion-icon="" class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </h2>
+        <div id="accordion-color-body-1" class="" aria-labelledby="accordion-color-heading-1">
+            <div class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                <p class="text-white dark:text-white"> <u>Var:</u> User can re-declare variable using var and user can
+                    update var variable. </p>
+                <p class="text-white dark:text-white"><u>Let:</u> Users cannot re-declare the variable defined with the
+                    let
+                    keyword but can update it.</p>
+                <p class="text-white dark:text-white"><u>Const:</u> Users cannot change the properties of the const
+                    object, but
+                    they can change the value of properties of the const object.</p>
+            </div>
+        </div>
+        <h2 id="accordion-color-heading-2">
+            <button type="button"
+                class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800"
+                data-accordion-target="#accordion-color-body-2" aria-expanded="false"
+                aria-controls="accordion-color-body-2">
+                <span>Difference between Regular Function and Arrow Function?</span>
+                <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </h2>
+        <div id="accordion-color-body-2" class="hidden" aria-labelledby="accordion-color-heading-2">
+            <div class="p-5 font-light border border-b-0 border-gray-200 dark:border-gray-700">
+                <p class="text-white dark:text-white"> 1. Arguments objects are not available in arrow
+                    functions, but are available in regular functions.</p>
+                <p class="text-white dark:text-white">2. A programmer can get the same result as regular functions
+                    by writing a few lines of code using arrow functions.</p>
+            </div>
+        </div>
+        <h2 id="accordion-color-heading-3">
+            <button type="button"
+                class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-800 dark:border-gray-700 dark:text-gray-400 hover:bg-blue-100 dark:hover:bg-gray-800"
+                data-accordion-target="#accordion-color-body-3" aria-expanded="false"
+                aria-controls="accordion-color-body-3">
+                <span>Why we use Template String?</span>
+                <svg data-accordion-icon="" class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </h2>
+        <div id="accordion-color-body-3" class="hidden" aria-labelledby="accordion-color-heading-3">
+            <div class="p-5 font-light border border-t-0 border-gray-200 dark:border-gray-700">
+                <p class="text-white dark:text-white">1. Template string allows multiline strings.</p>
+                <p class="text-white dark:text-white">2. With template string, we can use both single and double quotes
+                    inside a string.</p>
+                <p class="text-white dark:text-white">3. Template strings provide an easy way to interpolate variables
+                    and expressions into strings. The method is called string interpolation.</p>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+
+
+</body>
+
+</html>
