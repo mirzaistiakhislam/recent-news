@@ -86,7 +86,7 @@ const displayNewsDetails = (details) => {
         const detailDiv = document.createElement('div');
         // detailDiv.classList.add('card', 'card-side', 'bg-base-100', 'shadow-xl');
         detailDiv.innerHTML = `       
-        <div class="card lg:card-side bg-base-100 shadow-xl my-4 ">    
+        <div class="card lg:card-side bg-base-100 shadow-xl my-4 bg-gray-800 ">    
             <figure><img src="${detail.thumbnail_url}" alt="Movie"></figure>
             <div class="card-body">
                 <h2 class="card-title">${detail.title}</h2>
@@ -140,7 +140,7 @@ const displayLoadDetails = data => {
     fullNews.innerText = data[0].details;
     const authorDetails = document.getElementById('author-details');
     authorDetails.innerHTML = `
-            <div class="flex justify-between">
+            <div class="flex justify-between ">
                 <div class="flex items-center">
                     <img class="w-12 rounded-full" src="${data[0].author.img}"/>
                     <span class="px-2">${data[0].author.name ? data[0].author.name : 'Not Found'}</span>
@@ -151,8 +151,8 @@ const displayLoadDetails = data => {
                     <span class="px-2">${data[0].total_view ? data[0].total_view : 'Not Found'}</span>
                 </div>
 
-        </div>
-    `
+            </div>
+    `;
 }
 
 const spinner = isLoader => {
